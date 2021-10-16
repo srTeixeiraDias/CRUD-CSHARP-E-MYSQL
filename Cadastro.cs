@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,38 @@ namespace fundBra
         {
             InitializeComponent();
         }
+
+        private string Letra(string str)       //metodo aprendido hoje, transforma as primeiras letras das palavras de uma frase em maiuscula
+        {
+            return CultureInfo.CurrentCulture.TextInfo.ToTitleCase(str.ToLower());
+        }
+
+        private string LetraM(string nom)        //metodo que exclui os conectidos do array abaixo
+        {
+            var resultado = "";
+            var palavrasdeletadas = new string[] { "da", "de", "di", "do", "du", "e" };
+
+            var palavras = nom.Split(' ');
+
+            foreach (string palavra in palavras)
+            {
+                if(palavrasdeletadas.Contains(palavra))
+                {
+                    resultado += palavra + " ";
+                }
+                else
+                {
+                    resultado += Letra(palavra) + " ";
+                }
+
+                
+
+               
+            }
+            resultado = resultado.Trim();
+            return resultado;
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -72,13 +105,15 @@ namespace fundBra
                 
                 try
                 {
+                    string nomeM;
+                    nomeM = LetraM(txt_nome.Text);  //transformando o txt nome com as letras maiusculas
                     con.conectar();
                     label8.Text = "CONExÇÃO OK";
                     string sql = "insert into cadastro values ( @Nome, @Telefone, @Celular, @Email, @Data_nasc)";
                     MySqlCommand cmd = new MySqlCommand(sql, con.conn);
-                    cmd.Parameters.AddWithValue("@Nome", txt_nome.Text);
-                    cmd.Parameters.AddWithValue("@Telefone", txt_telefone.Text );
-                    cmd.Parameters.AddWithValue("@Celular", txt_celular.Text );
+                    cmd.Parameters.AddWithValue("@Nome", nomeM);
+                    cmd.Parameters.AddWithValue("@Telefone", txt_telefone.Text);
+                    cmd.Parameters.AddWithValue("@Celular", txt_celular.Text);
                     cmd.Parameters.AddWithValue("@Email", txt_email.Text);
                     cmd.Parameters.AddWithValue("@Data_nasc", maskedTextBox1.Text);
                     cmd.ExecuteNonQuery();
