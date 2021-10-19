@@ -101,6 +101,12 @@
     <Compile Include="atualizar.Designer.cs">
       <DependentUpon>atualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="busca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="busca.Designer.cs">
+      <DependentUpon>busca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="atualizar.resx">
       <DependentUpon>atualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="busca.resx">
+      <DependentUpon>busca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>

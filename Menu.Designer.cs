@@ -31,13 +31,13 @@ namespace fundBra
         {
             this.btnFechar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,6 +72,16 @@ namespace fundBra
             this.panel1.Size = new System.Drawing.Size(470, 267);
             this.panel1.TabIndex = 6;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 21);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Por: Samuel Teixeira Dias";
             // 
             // btnPesquisar
             // 
@@ -162,16 +172,6 @@ namespace fundBra
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 21);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Por: Samuel Teixeira Dias";
-            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,6 +180,7 @@ namespace fundBra
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MENU";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

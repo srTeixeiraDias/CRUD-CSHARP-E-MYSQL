@@ -115,5 +115,11 @@ namespace fundBra
             Close();
 
         }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            busca busca = new busca();
+            busca.ShowDialog();
+        }
     }
 }

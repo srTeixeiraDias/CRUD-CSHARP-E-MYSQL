@@ -108,7 +108,7 @@ namespace fundBra
                     string nomeM;
                     nomeM = LetraM(txt_nome.Text);  //transformando o txt nome com as letras maiusculas
                     con.conectar();
-                    label8.Text = "CONExÇÃO OK";
+                    label8.Text = "CONEXÇÃO OK";
                     string sql = "insert into cadastro values ( @Nome, @Telefone, @Celular, @Email, @Data_nasc)";
                     MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                     cmd.Parameters.AddWithValue("@Nome", nomeM);
@@ -120,12 +120,7 @@ namespace fundBra
 
                     MessageBox.Show("Usuario cadastrado com sucesso!", "CADASTRO EFETUADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    txt_nome.Clear();
-                    txt_telefone.Clear();
-                    txt_celular.Clear();
-                    txt_email.Clear();
-                    maskedTextBox1.Clear();
-                    txt_nome.Focus();
+                  
                 }
 
                 catch (Exception E)

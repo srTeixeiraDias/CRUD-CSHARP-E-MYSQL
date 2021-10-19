@@ -31,10 +31,10 @@ namespace fundBra
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_data = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_limpar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.txt_pesquisa = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
@@ -53,7 +53,7 @@ namespace fundBra
             this.label5 = new System.Windows.Forms.Label();
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.txt_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,11 +71,11 @@ namespace fundBra
             // txt_data
             // 
             this.txt_data.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_data.Controls.Add(this.label13);
             this.txt_data.Controls.Add(this.label12);
             this.txt_data.Controls.Add(this.label11);
             this.txt_data.Controls.Add(this.btn_limpar);
             this.txt_data.Controls.Add(this.label10);
-            this.txt_data.Controls.Add(this.label9);
             this.txt_data.Controls.Add(this.txt_pesquisa);
             this.txt_data.Controls.Add(this.label8);
             this.txt_data.Controls.Add(this.maskedTextBox1);
@@ -98,6 +98,16 @@ namespace fundBra
             this.txt_data.Name = "txt_data";
             this.txt_data.Size = new System.Drawing.Size(582, 401);
             this.txt_data.TabIndex = 6;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(226, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(142, 21);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "Por: Samuel Teixeira Dias";
             // 
             // label11
             // 
@@ -127,26 +137,16 @@ namespace fundBra
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 193);
+            this.label10.Location = new System.Drawing.Point(37, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(180, 16);
             this.label10.TabIndex = 24;
             this.label10.Text = "Insira nome para pesquisa:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(38, 193);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 16);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "*Nome:";
-            // 
             // txt_pesquisa
             // 
             this.txt_pesquisa.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_pesquisa.Location = new System.Drawing.Point(230, 189);
+            this.txt_pesquisa.Location = new System.Drawing.Point(230, 173);
             this.txt_pesquisa.Name = "txt_pesquisa";
             this.txt_pesquisa.Size = new System.Drawing.Size(311, 20);
             this.txt_pesquisa.TabIndex = 25;
@@ -321,15 +321,18 @@ namespace fundBra
             this.txt_email.Size = new System.Drawing.Size(311, 20);
             this.txt_email.TabIndex = 8;
             // 
-            // label12
+            // label13
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(226, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(142, 21);
-            this.label12.TabIndex = 28;
-            this.label12.Text = "Por: Samuel Teixeira Dias";
+            this.label13.AutoSize = true;
+            this.label13.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label13.Font = new System.Drawing.Font("Dubai", 8.999999F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Azure;
+            this.label13.Location = new System.Drawing.Point(313, 193);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(144, 21);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "Não sei o nome completo";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // pesquisar
             // 
@@ -368,10 +371,10 @@ namespace fundBra
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txt_pesquisa;
         private System.Windows.Forms.Button btn_limpar;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
