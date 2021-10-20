@@ -16,7 +16,9 @@ namespace fundBra
         public atualizar()
         {
             InitializeComponent();
+
         }
+
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
@@ -28,10 +30,11 @@ namespace fundBra
             {
                 con.conectar();
                
-                string sql = "Update cadastro set nome= @nome, telefone=@telefone, celular=@celular, Email=@email, Data_nasc=@data where nome= @pesquisa";
+                string sql = "Update cadastro set cpf=@cpf, nome= @nome, telefone=@telefone, celular=@celular, Email=@email, Data_nasc=@data where nome= @pesquisa";
                 MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                 
                 cmd.Parameters.AddWithValue("@nome", txt_nome.Text);
+                cmd.Parameters.AddWithValue("@cpf", txt_cpf.Text);
                 cmd.Parameters.AddWithValue("@telefone", txt_telefone.Text);
                 cmd.Parameters.AddWithValue("@celular", txt_celular.Text);
                 cmd.Parameters.AddWithValue("@email", txt_email.Text);
@@ -55,6 +58,7 @@ namespace fundBra
             txt_celular.Clear();
             txt_email.Clear();
             maskedTextBox1.Clear();
+            txt_cpf.Clear();
             txt_alteracao.Focus();
 
         }
@@ -67,11 +71,11 @@ namespace fundBra
             {
                 if (txt_alteracao.Text == "")
                 {
-                    MessageBox.Show("Digite o nome do cadastro que será atualizado!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Digite o CPF do cadastro que será atualizado!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 con.conectar();
 
-                string sql = "select * from cadastro where Nome=@pesquisa;";
+                string sql = "select * from cadastro where cpf=@pesquisa;";
                 MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                 cmd.Parameters.AddWithValue("@pesquisa", txt_alteracao.Text);
                 MySqlDataReader rdr = cmd.ExecuteReader();
@@ -83,6 +87,7 @@ namespace fundBra
 
 
                     txt_nome.Text = Convert.ToString(rdr["Nome"]);
+                    txt_cpf.Text = Convert.ToString(rdr["cpf"]);
                     txt_telefone.Text = Convert.ToString(rdr["telefone"]);
                     txt_celular.Text = Convert.ToString(rdr["celular"]);
                     txt_email.Text = Convert.ToString(rdr["email"]);
@@ -95,7 +100,7 @@ namespace fundBra
                 }
                 else
                 {
-                    throw new Exception("Nome inválido ou não cadastrado!");
+                    throw new Exception("CPF inválido ou não cadastrado!");
                 }
 
 
@@ -129,6 +134,11 @@ namespace fundBra
         private void btnSair_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,12 +47,17 @@ namespace fundBra
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
+            //admin admin = new admin();
+           // admin.ShowDialog();
+            
             atualizar update = new atualizar();
             update.ShowDialog();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+          //  admin admin = new admin();
+          //  admin.ShowDialog();
             apagar deletar = new apagar();
             deletar.ShowDialog();
         }

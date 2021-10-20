@@ -45,11 +45,13 @@ namespace fundBra
             this.txt_celular = new System.Windows.Forms.MaskedTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_data = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.txt_cpf = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.txt_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +65,7 @@ namespace fundBra
             this.btnEfetuarCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEfetuarCad.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEfetuarCad.Image = global::fundBra.Properties.Resources.cadastrar_1;
-            this.btnEfetuarCad.Location = new System.Drawing.Point(228, 334);
+            this.btnEfetuarCad.Location = new System.Drawing.Point(228, 355);
             this.btnEfetuarCad.Name = "btnEfetuarCad";
             this.btnEfetuarCad.Size = new System.Drawing.Size(125, 69);
             this.btnEfetuarCad.TabIndex = 0;
@@ -74,7 +76,7 @@ namespace fundBra
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(32, 235);
+            this.label1.Location = new System.Drawing.Point(32, 311);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 16);
             this.label1.TabIndex = 1;
@@ -96,7 +98,7 @@ namespace fundBra
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 304);
+            this.label3.Location = new System.Drawing.Point(32, 238);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 16);
             this.label3.TabIndex = 3;
@@ -117,7 +119,7 @@ namespace fundBra
             // txt_nome
             // 
             this.txt_nome.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_nome.Location = new System.Drawing.Point(228, 196);
+            this.txt_nome.Location = new System.Drawing.Point(228, 195);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(311, 20);
             this.txt_nome.TabIndex = 6;
@@ -150,7 +152,7 @@ namespace fundBra
             this.btnNovoCad.FlatAppearance.BorderSize = 0;
             this.btnNovoCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNovoCad.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNovoCad.Location = new System.Drawing.Point(45, 350);
+            this.btnNovoCad.Location = new System.Drawing.Point(45, 367);
             this.btnNovoCad.Name = "btnNovoCad";
             this.btnNovoCad.Size = new System.Drawing.Size(132, 45);
             this.btnNovoCad.TabIndex = 13;
@@ -164,7 +166,7 @@ namespace fundBra
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(415, 357);
+            this.btnSair.Location = new System.Drawing.Point(404, 375);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(114, 38);
             this.btnSair.TabIndex = 14;
@@ -183,7 +185,7 @@ namespace fundBra
             // txt_telefone
             // 
             this.txt_telefone.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_telefone.Location = new System.Drawing.Point(228, 231);
+            this.txt_telefone.Location = new System.Drawing.Point(228, 307);
             this.txt_telefone.Mask = "(00)0000-0000";
             this.txt_telefone.Name = "txt_telefone";
             this.txt_telefone.Size = new System.Drawing.Size(114, 20);
@@ -193,7 +195,7 @@ namespace fundBra
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(348, 231);
+            this.label7.Location = new System.Drawing.Point(348, 307);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 16);
             this.label7.TabIndex = 18;
@@ -202,7 +204,7 @@ namespace fundBra
             // txt_celular
             // 
             this.txt_celular.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_celular.Location = new System.Drawing.Point(425, 231);
+            this.txt_celular.Location = new System.Drawing.Point(425, 307);
             this.txt_celular.Mask = "(00)00000-0000";
             this.txt_celular.Name = "txt_celular";
             this.txt_celular.Size = new System.Drawing.Size(114, 20);
@@ -214,12 +216,14 @@ namespace fundBra
             this.panel2.Controls.Add(this.txt_data);
             this.panel2.Location = new System.Drawing.Point(2, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(604, 424);
+            this.panel2.Size = new System.Drawing.Size(604, 447);
             this.panel2.TabIndex = 20;
             // 
             // txt_data
             // 
             this.txt_data.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_data.Controls.Add(this.txt_cpf);
+            this.txt_data.Controls.Add(this.label10);
             this.txt_data.Controls.Add(this.label9);
             this.txt_data.Controls.Add(this.label8);
             this.txt_data.Controls.Add(this.maskedTextBox1);
@@ -241,8 +245,30 @@ namespace fundBra
             this.txt_data.Controls.Add(this.txt_email);
             this.txt_data.Location = new System.Drawing.Point(9, 11);
             this.txt_data.Name = "txt_data";
-            this.txt_data.Size = new System.Drawing.Size(582, 401);
+            this.txt_data.Size = new System.Drawing.Size(582, 427);
             this.txt_data.TabIndex = 6;
+            this.txt_data.Paint += new System.Windows.Forms.PaintEventHandler(this.txt_data_Paint);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label10.Location = new System.Drawing.Point(354, 234);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(47, 16);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "*CPF: ";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(224, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(142, 21);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Por: Samuel Teixeira Dias";
             // 
             // label8
             // 
@@ -255,11 +281,12 @@ namespace fundBra
             // maskedTextBox1
             // 
             this.maskedTextBox1.BackColor = System.Drawing.Color.YellowGreen;
-            this.maskedTextBox1.Location = new System.Drawing.Point(228, 300);
+            this.maskedTextBox1.Location = new System.Drawing.Point(228, 234);
             this.maskedTextBox1.Mask = "00/00/0000";
             this.maskedTextBox1.Name = "maskedTextBox1";
             this.maskedTextBox1.Size = new System.Drawing.Size(114, 20);
             this.maskedTextBox1.TabIndex = 22;
+            this.maskedTextBox1.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox1_MaskInputRejected);
             // 
             // label4
             // 
@@ -279,24 +306,23 @@ namespace fundBra
             this.pictureBox1.TabIndex = 20;
             this.pictureBox1.TabStop = false;
             // 
-            // label9
+            // txt_cpf
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Dubai", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(224, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(142, 21);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Por: Samuel Teixeira Dias";
+            this.txt_cpf.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_cpf.Location = new System.Drawing.Point(396, 234);
+            this.txt_cpf.Name = "txt_cpf";
+            this.txt_cpf.Size = new System.Drawing.Size(143, 20);
+            this.txt_cpf.TabIndex = 25;
             // 
             // Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 423);
+            this.ClientSize = new System.Drawing.Size(605, 450);
             this.Controls.Add(this.panel2);
             this.Name = "Cadastro";
             this.Text = "Cadastro";
+            this.Load += new System.EventHandler(this.Cadastro_Load);
             this.panel2.ResumeLayout(false);
             this.txt_data.ResumeLayout(false);
             this.txt_data.PerformLayout();
@@ -328,6 +354,8 @@ namespace fundBra
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txt_cpf;
     }
 }
 

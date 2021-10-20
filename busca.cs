@@ -22,8 +22,10 @@ namespace fundBra
             lsl_busca.FullRowSelect = true;
             lsl_busca.GridLines = true;
 
+            lsl_busca.Columns.Add("CPF", 160, HorizontalAlignment.Center);
             lsl_busca.Columns.Add("Nome", 160, HorizontalAlignment.Center);
             lsl_busca.Columns.Add("Email", 160, HorizontalAlignment.Center);
+            
         }
 
         private void btn_busca_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace fundBra
 
                     string buscar = "'%" + txt_busca.Text + "%'";
 
-                    string sql = "select nome, email from cadastro where Nome like " + buscar + " or email like " + buscar;
+                    string sql = "select cpf, nome, email from cadastro where Nome like " + buscar + " or email like " + buscar;
                     // string sql = "select nome, email from cadastro where Nome like '%@buscar%' or email like '%@buscar%' ";
                     MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                     //  cmd.Parameters.AddWithValue("@buscar", txt_busca.Text);
@@ -54,6 +56,7 @@ namespace fundBra
                         {
                         rdr.GetString(0),
                         rdr.GetString(1),
+                        rdr.GetString(2)
                     };
 
                         var linha = new ListViewItem(row);

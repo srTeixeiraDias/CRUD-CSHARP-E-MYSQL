@@ -26,11 +26,11 @@ namespace fundBra
             {
                 if (txt_deletar.Text == "")
                 {
-                    MessageBox.Show("Digite o nome do cadastro que será deletado", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Digite o cpf do cadastro que será deletado", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 con.conectar();
 
-                string sql = "select * from cadastro where Nome=@pesquisa;";
+                string sql = "select * from cadastro where cpf=@pesquisa;";
                 MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                 cmd.Parameters.AddWithValue("@pesquisa", txt_deletar.Text);
                 MySqlDataReader rdr = cmd.ExecuteReader();
@@ -42,6 +42,7 @@ namespace fundBra
 
 
                     txt_nome.Text = Convert.ToString(rdr["Nome"]);
+                    txt_cpf.Text = Convert.ToString(rdr["cpf"]);
                     txt_telefone.Text = Convert.ToString(rdr["telefone"]);
                     txt_celular.Text = Convert.ToString(rdr["celular"]);
                     txt_email.Text = Convert.ToString(rdr["email"]);
@@ -54,7 +55,7 @@ namespace fundBra
                 }
                 else
                 {
-                    throw new Exception("Nome inválido ou não cadastrado!");
+                    throw new Exception("CPF inválido ou não cadastrado!");
                 }
 
 
@@ -92,9 +93,9 @@ namespace fundBra
                     try
                     {
                         con.conectar();
-                        string sql = "delete from cadastro where nome=@nome";
+                        string sql = "delete from cadastro where cpf=@cpf";
                         MySqlCommand cmd = new MySqlCommand(sql, con.conn);
-                        cmd.Parameters.AddWithValue("@nome", txt_deletar.Text);
+                        cmd.Parameters.AddWithValue("@cpf", txt_deletar.Text);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Usuario deletado com sucesso!", "DELETADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

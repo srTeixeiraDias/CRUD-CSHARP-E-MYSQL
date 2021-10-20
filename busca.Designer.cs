@@ -83,9 +83,9 @@ namespace fundBra
             // 
             this.lsl_busca.BackColor = System.Drawing.Color.YellowGreen;
             this.lsl_busca.HideSelection = false;
-            this.lsl_busca.Location = new System.Drawing.Point(114, 263);
+            this.lsl_busca.Location = new System.Drawing.Point(63, 263);
             this.lsl_busca.Name = "lsl_busca";
-            this.lsl_busca.Size = new System.Drawing.Size(311, 86);
+            this.lsl_busca.Size = new System.Drawing.Size(455, 86);
             this.lsl_busca.TabIndex = 33;
             this.lsl_busca.UseCompatibleStateImageBehavior = false;
             // 

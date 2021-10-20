@@ -24,26 +24,6 @@ namespace fundBra
 
         }
 
-        public void escondercampos()
-        {
-            txt_nome.Enabled = false;
-            txt_telefone.Enabled = false;
-            txt_celular.Enabled = false;
-            txt_email.Enabled = false;
-            txt_data.Enabled = false;
-            
-        }
-
-        public void hablitarcampos()
-        {
-            txt_nome.Enabled = true;
-            txt_telefone.Enabled = true;
-            txt_celular.Enabled = true;
-            txt_email.Enabled = true;
-            txt_data.Enabled = true;
-
-        }
-
         private void btn_consultar_Click(object sender, EventArgs e)
         {
             conexao con = new conexao(); //novo objeto da classe de conexão
@@ -56,7 +36,7 @@ namespace fundBra
                 }
                 con.conectar();
                 
-                string sql = "select * from cadastro where Nome=@pesquisa;";
+                string sql = "select * from cadastro where cpf=@pesquisa;";
                 MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                 cmd.Parameters.AddWithValue("@pesquisa", txt_pesquisa.Text);
                 MySqlDataReader rdr = cmd.ExecuteReader();
@@ -68,6 +48,7 @@ namespace fundBra
                     
                     
                         txt_nome.Text = Convert.ToString(rdr["Nome"]);
+                        mskd_cpf.Text = Convert.ToString(rdr["cpf"]);
                         txt_telefone.Text = Convert.ToString(rdr["telefone"]);
                         txt_celular.Text = Convert.ToString(rdr["celular"]);
                         txt_email.Text = Convert.ToString(rdr["email"]);
@@ -80,7 +61,7 @@ namespace fundBra
                 }
                 else
                 {
-                    throw new Exception("Nome inválido ou não cadastrado!");
+                    throw new Exception("CPF inválido ou não cadastrado!");
                 }
                    
                 
@@ -120,6 +101,31 @@ namespace fundBra
         {
             busca busca = new busca();
             busca.ShowDialog();
+        }
+
+        private void txt_data_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pesquisar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nome_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskd_cpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

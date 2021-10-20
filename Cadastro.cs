@@ -84,8 +84,9 @@ namespace fundBra
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string nome, email, telefone, celular;
+            string nome, email, telefone, celular, cpf;
             nome = txt_nome.Text;
+            cpf = txt_cpf.Text;
             email = txt_email.Text;
             telefone = txt_telefone.Text;
             celular = txt_celular.Text;
@@ -93,7 +94,7 @@ namespace fundBra
 
 
 
-            if (txt_nome.Text == "" ||  txt_email.Text== "" || txt_celular.Text == "" || maskedTextBox1.Text == "")
+            if (txt_nome.Text == "" || txt_email.Text== "" || txt_celular.Text == "" || maskedTextBox1.Text == "" || txt_cpf.Text == "")
             {
                 MessageBox.Show("PREENCHA TODOS OS CAMPOS OBRIGATÓRIOS(*)!","ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_nome.Focus();
@@ -109,11 +110,12 @@ namespace fundBra
                     nomeM = LetraM(txt_nome.Text);  //transformando o txt nome com as letras maiusculas
                     con.conectar();
                     label8.Text = "CONEXÇÃO OK";
-                    string sql = "insert into cadastro values ( @Nome, @Telefone, @Celular, @Email, @Data_nasc)";
+                    string sql = "insert into cadastro values ( @cpf, @Nome ,@Telefone, @Celular, @Email, @Data_nasc)";
                     MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                     cmd.Parameters.AddWithValue("@Nome", nomeM);
                     cmd.Parameters.AddWithValue("@Telefone", txt_telefone.Text);
                     cmd.Parameters.AddWithValue("@Celular", txt_celular.Text);
+                    cmd.Parameters.AddWithValue("@cpf", txt_cpf.Text);
                     cmd.Parameters.AddWithValue("@Email", txt_email.Text);
                     cmd.Parameters.AddWithValue("@Data_nasc", maskedTextBox1.Text);
                     cmd.ExecuteNonQuery();
@@ -171,5 +173,29 @@ namespace fundBra
         {
             Close();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_data_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void mskd_cpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+                    }
     }
 }
