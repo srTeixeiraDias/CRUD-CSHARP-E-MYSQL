@@ -31,6 +31,18 @@ namespace fundBra
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_data = new System.Windows.Forms.Panel();
+            this.txt_cpf = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txt_celular = new System.Windows.Forms.MaskedTextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_telefone = new System.Windows.Forms.MaskedTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_nome = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_consultar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -45,18 +57,6 @@ namespace fundBra
             this.btn_atualizar = new System.Windows.Forms.Button();
             this.lbl_saida = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.txt_cpf = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.txt_celular = new System.Windows.Forms.MaskedTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_telefone = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txt_nome = new System.Windows.Forms.TextBox();
-            this.txt_email = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.txt_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,6 +104,123 @@ namespace fundBra
             this.txt_data.Name = "txt_data";
             this.txt_data.Size = new System.Drawing.Size(582, 416);
             this.txt_data.TabIndex = 6;
+            // 
+            // txt_cpf
+            // 
+            this.txt_cpf.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_cpf.Enabled = false;
+            this.txt_cpf.Location = new System.Drawing.Point(398, 254);
+            this.txt_cpf.Name = "txt_cpf";
+            this.txt_cpf.Size = new System.Drawing.Size(143, 20);
+            this.txt_cpf.TabIndex = 40;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(356, 254);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 16);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "*CPF: ";
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BackColor = System.Drawing.Color.YellowGreen;
+            this.maskedTextBox1.Enabled = false;
+            this.maskedTextBox1.Location = new System.Drawing.Point(230, 254);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(114, 20);
+            this.maskedTextBox1.TabIndex = 38;
+            // 
+            // txt_celular
+            // 
+            this.txt_celular.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_celular.Enabled = false;
+            this.txt_celular.Location = new System.Drawing.Point(427, 327);
+            this.txt_celular.Mask = "(00)00000-0000";
+            this.txt_celular.Name = "txt_celular";
+            this.txt_celular.Size = new System.Drawing.Size(114, 20);
+            this.txt_celular.TabIndex = 37;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(350, 327);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 16);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "*Celular: ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 331);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Telefone:";
+            // 
+            // txt_telefone
+            // 
+            this.txt_telefone.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_telefone.Enabled = false;
+            this.txt_telefone.Location = new System.Drawing.Point(230, 327);
+            this.txt_telefone.Mask = "(00)0000-0000";
+            this.txt_telefone.Name = "txt_telefone";
+            this.txt_telefone.Size = new System.Drawing.Size(114, 20);
+            this.txt_telefone.TabIndex = 35;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 289);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 16);
+            this.label3.TabIndex = 30;
+            this.label3.Text = "*Email:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(34, 258);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 16);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "*Data de Nascimento:";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(34, 219);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 16);
+            this.label13.TabIndex = 32;
+            this.label13.Text = "*Nome:";
+            // 
+            // txt_nome
+            // 
+            this.txt_nome.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_nome.Enabled = false;
+            this.txt_nome.Location = new System.Drawing.Point(230, 215);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(311, 20);
+            this.txt_nome.TabIndex = 33;
+            // 
+            // txt_email
+            // 
+            this.txt_email.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_email.Enabled = false;
+            this.txt_email.Location = new System.Drawing.Point(230, 289);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(311, 20);
+            this.txt_email.TabIndex = 34;
             // 
             // label12
             // 
@@ -256,117 +373,6 @@ namespace fundBra
             this.btnSair.Text = "SAIR";
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
-            // 
-            // txt_cpf
-            // 
-            this.txt_cpf.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_cpf.Location = new System.Drawing.Point(398, 254);
-            this.txt_cpf.Name = "txt_cpf";
-            this.txt_cpf.Size = new System.Drawing.Size(143, 20);
-            this.txt_cpf.TabIndex = 40;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(356, 254);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "*CPF: ";
-            // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.BackColor = System.Drawing.Color.YellowGreen;
-            this.maskedTextBox1.Location = new System.Drawing.Point(230, 254);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(114, 20);
-            this.maskedTextBox1.TabIndex = 38;
-            // 
-            // txt_celular
-            // 
-            this.txt_celular.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_celular.Location = new System.Drawing.Point(427, 327);
-            this.txt_celular.Mask = "(00)00000-0000";
-            this.txt_celular.Name = "txt_celular";
-            this.txt_celular.Size = new System.Drawing.Size(114, 20);
-            this.txt_celular.TabIndex = 37;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(350, 327);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 16);
-            this.label7.TabIndex = 36;
-            this.label7.Text = "*Celular: ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 331);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Telefone:";
-            // 
-            // txt_telefone
-            // 
-            this.txt_telefone.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_telefone.Location = new System.Drawing.Point(230, 327);
-            this.txt_telefone.Mask = "(00)0000-0000";
-            this.txt_telefone.Name = "txt_telefone";
-            this.txt_telefone.Size = new System.Drawing.Size(114, 20);
-            this.txt_telefone.TabIndex = 35;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(34, 289);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 16);
-            this.label3.TabIndex = 30;
-            this.label3.Text = "*Email:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 258);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(144, 16);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "*Data de Nascimento:";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(34, 219);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(54, 16);
-            this.label13.TabIndex = 32;
-            this.label13.Text = "*Nome:";
-            // 
-            // txt_nome
-            // 
-            this.txt_nome.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_nome.Location = new System.Drawing.Point(230, 215);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(311, 20);
-            this.txt_nome.TabIndex = 33;
-            // 
-            // txt_email
-            // 
-            this.txt_email.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_email.Location = new System.Drawing.Point(230, 289);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(311, 20);
-            this.txt_email.TabIndex = 34;
             // 
             // apagar
             // 

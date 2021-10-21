@@ -14,9 +14,11 @@ namespace fundBra
 {
     public partial class Cadastro : Form
     {
+       
         public Cadastro()
         {
             InitializeComponent();
+            
         }
 
         private string Letra(string str)       //metodo aprendido hoje, transforma as primeiras letras das palavras de uma frase em maiuscula
@@ -82,7 +84,7 @@ namespace fundBra
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        public void button1_Click(object sender, EventArgs e)
         {
             string nome, email, telefone, celular, cpf;
             nome = txt_nome.Text;
@@ -94,7 +96,7 @@ namespace fundBra
 
 
 
-            if (txt_nome.Text == "" || txt_email.Text== "" || txt_celular.Text == "" || maskedTextBox1.Text == "" || txt_cpf.Text == "")
+            if (txt_nome.Text == "" || txt_email.Text== "" || txt_celular.Text == "" ||  txt_cpf.Text == "")
             {
                 MessageBox.Show("PREENCHA TODOS OS CAMPOS OBRIGATÓRIOS(*)!","ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 txt_nome.Focus();
@@ -102,38 +104,54 @@ namespace fundBra
             }
             else
             {
-                conexao con = new conexao(); //novo objeto da classe de conexão 
+                if(validacoes.emailValido(txt_email.Text))
+                {
+                    if (validacoes.cpfvalido(txt_cpf.Text))
+                    {
+                        conexao con = new conexao(); //novo objeto da classe de conexão 
+
+                        try
+                        {
+                            
+                            string nomeM;
+                            nomeM = LetraM(txt_nome.Text);  //transformando o txt nome com as letras maiusculas
+                            con.conectar();
+                            label8.Text = "CONEXÇÃO OK";
+                            string sql = "insert into cadastro values ( @cpf, @Nome ,@Telefone, @Celular, @Email, @data)";
+                            MySqlCommand cmd = new MySqlCommand(sql, con.conn);
+                            cmd.Parameters.AddWithValue("@Nome", nomeM);
+                            cmd.Parameters.AddWithValue("@Telefone", txt_telefone.Text);
+                            cmd.Parameters.AddWithValue("@Celular", txt_celular.Text);
+                            cmd.Parameters.AddWithValue("@cpf", txt_cpf.Text);
+                            cmd.Parameters.AddWithValue("@Email", txt_email.Text);
+                            cmd.Parameters.AddWithValue("@data", dateTimePicker1.Value);
+                            cmd.ExecuteNonQuery();
+
+                            MessageBox.Show("Usuario cadastrado com sucesso!", "CADASTRO EFETUADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        }
+
+                        catch (Exception E)
+                        {
+                            MessageBox.Show(E.Message.ToString(), "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        finally
+                        {
+                            con.desconectar();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O CPF digitado é inválido, revise-o", "CPF INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("O email digitado é inválido, revise-o", "EMAIL INVALIDO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
                 
-                try
-                {
-                    string nomeM;
-                    nomeM = LetraM(txt_nome.Text);  //transformando o txt nome com as letras maiusculas
-                    con.conectar();
-                    label8.Text = "CONEXÇÃO OK";
-                    string sql = "insert into cadastro values ( @cpf, @Nome ,@Telefone, @Celular, @Email, @Data_nasc)";
-                    MySqlCommand cmd = new MySqlCommand(sql, con.conn);
-                    cmd.Parameters.AddWithValue("@Nome", nomeM);
-                    cmd.Parameters.AddWithValue("@Telefone", txt_telefone.Text);
-                    cmd.Parameters.AddWithValue("@Celular", txt_celular.Text);
-                    cmd.Parameters.AddWithValue("@cpf", txt_cpf.Text);
-                    cmd.Parameters.AddWithValue("@Email", txt_email.Text);
-                    cmd.Parameters.AddWithValue("@Data_nasc", maskedTextBox1.Text);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Usuario cadastrado com sucesso!", "CADASTRO EFETUADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                  
-                }
-
-                catch (Exception E)
-                {
-                    MessageBox.Show(E.Message.ToString(), "ERRO", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-                finally
-                {
-                    con.desconectar();
-                }
                 
             }
 
@@ -159,7 +177,6 @@ namespace fundBra
             txt_telefone.Clear();
             txt_celular.Clear();
             txt_email.Clear();
-            maskedTextBox1.Clear();
             txt_nome.Focus();
 
         }

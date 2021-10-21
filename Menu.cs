@@ -47,19 +47,35 @@ namespace fundBra
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
-            //admin admin = new admin();
-           // admin.ShowDialog();
+
+            admin adm = new admin();
+            adm.ShowDialog();
+            if(adm.resultado)
+            {
+                atualizar update = new atualizar();
+                update.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("VOCÊ NECESSITA DA AUTORIZAÇÃ DO ADMINISTRADOR", "atenção");
+            }
             
-            atualizar update = new atualizar();
-            update.ShowDialog();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-          //  admin admin = new admin();
-          //  admin.ShowDialog();
-            apagar deletar = new apagar();
-            deletar.ShowDialog();
+            admin adm = new admin();
+            adm.ShowDialog();
+            if (adm.resultado)
+            {
+                apagar deletar = new apagar();
+                deletar.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("VOCÊ NECESSITA DA AUTORIZAÇÃ DO ADMINISTRADOR", "atenção");
+            }
+            
         }
     }
 }

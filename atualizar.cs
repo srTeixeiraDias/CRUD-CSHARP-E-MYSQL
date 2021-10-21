@@ -30,7 +30,7 @@ namespace fundBra
             {
                 con.conectar();
                
-                string sql = "Update cadastro set cpf=@cpf, nome= @nome, telefone=@telefone, celular=@celular, Email=@email, Data_nasc=@data where nome= @pesquisa";
+                string sql = "Update cadastro set cpf=@cpf, nome= @nome, telefone=@telefone, celular=@celular, Email=@email, Data_nasc=@data where cpf= @pesquisa";
                 MySqlCommand cmd = new MySqlCommand(sql, con.conn);
                 
                 cmd.Parameters.AddWithValue("@nome", txt_nome.Text);
@@ -38,8 +38,10 @@ namespace fundBra
                 cmd.Parameters.AddWithValue("@telefone", txt_telefone.Text);
                 cmd.Parameters.AddWithValue("@celular", txt_celular.Text);
                 cmd.Parameters.AddWithValue("@email", txt_email.Text);
+                cmd.Parameters.AddWithValue("@data", dateTimePicker1.Value);
                 cmd.Parameters.AddWithValue("@pesquisa", txt_alteracao.Text);
-                cmd.Parameters.AddWithValue("@data", maskedTextBox1.Text);
+
+                
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("CADASTRO ATUALIZADO COM SUCESSO, CONSULTE E VERIFIQUE AS ALTERAÇÕES!", "ATUALIZADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -57,9 +59,9 @@ namespace fundBra
             txt_telefone.Clear();
             txt_celular.Clear();
             txt_email.Clear();
-            maskedTextBox1.Clear();
             txt_cpf.Clear();
             txt_alteracao.Focus();
+            
 
         }
 
@@ -71,6 +73,7 @@ namespace fundBra
             {
                 if (txt_alteracao.Text == "")
                 {
+                  
                     MessageBox.Show("Digite o CPF do cadastro que será atualizado!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 con.conectar();
@@ -91,7 +94,7 @@ namespace fundBra
                     txt_telefone.Text = Convert.ToString(rdr["telefone"]);
                     txt_celular.Text = Convert.ToString(rdr["celular"]);
                     txt_email.Text = Convert.ToString(rdr["email"]);
-                    maskedTextBox1.Text = Convert.ToString(rdr["Data_nasc"]);
+                    dateTimePicker1.Value = Convert.ToDateTime(rdr["Data_nasc"]);
 
                     txt_alteracao.Focus();
 
@@ -127,8 +130,9 @@ namespace fundBra
             txt_telefone.Clear();
             txt_celular.Clear();
             txt_email.Clear();
-            maskedTextBox1.Clear();
+            txt_cpf.Clear();
             txt_alteracao.Focus();
+            
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -136,7 +140,12 @@ namespace fundBra
             Close();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void maskedTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

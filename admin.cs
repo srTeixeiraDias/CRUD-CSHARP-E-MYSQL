@@ -12,6 +12,7 @@ namespace fundBra
 {
     public partial class admin : Form
     {
+        public bool resultado;
         public admin()
         {
             InitializeComponent();
@@ -20,16 +21,46 @@ namespace fundBra
 
         public void btn_autorizar_Click(object sender, EventArgs e)
         {
-            bool retorno;
-            if (txt_adm.Text=="admin" && txt_senha.Text == "admin")
+            
+            if (txt_adm.Text!="admin" || txt_senha.Text != "admin")
             {
-                Close();
+                MessageBox.Show("ADMINISTRADOR INVALIDO, AÇÃO NÃO AUTORIZADA!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_adm.Clear();
+                txt_senha.Clear();
+                resultado = false;
+                
             }
             else
             {
-                MessageBox.Show("ADMINISTRADOR INVALIDO, AÇÃO NÃO AUTORIZADA!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                retorno = false;
+                MessageBox.Show("ADMINISTRADOR VALIDO, AÇÃO AUTORIZADA!", "AUTORIZADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                resultado = true;
+
+                
+
+                Close();
             }
+            
+        }
+
+        public  bool Autorizar(string auto)
+        {
+            
+            if (txt_adm.Text != "admin" && txt_senha.Text != "admin")
+            {
+                MessageBox.Show("ADMINISTRADOR INVALIDO, AÇÃO NÃO AUTORIZADA!", "ATENÇÃO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+
+
+            }
+            else
+            {
+                MessageBox.Show("ADMINISTRADOR VALIDO, AÇÃO AUTORIZADA!", "AUTORIZADO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+               
+            }
+            
+            return true;
         }
 
         private void admin_Load(object sender, EventArgs e)

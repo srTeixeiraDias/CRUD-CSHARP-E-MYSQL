@@ -31,6 +31,12 @@ namespace fundBra
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_data = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btn_autorizar = new System.Windows.Forms.Button();
+            this.txt_senha = new System.Windows.Forms.TextBox();
+            this.txt_adm = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_limpar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -38,12 +44,6 @@ namespace fundBra
             this.btn_atualizar = new System.Windows.Forms.Button();
             this.lbl_saida = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_adm = new System.Windows.Forms.TextBox();
-            this.txt_senha = new System.Windows.Forms.TextBox();
-            this.btn_autorizar = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.txt_data.SuspendLayout();
             this.SuspendLayout();
@@ -77,6 +77,69 @@ namespace fundBra
             this.txt_data.Name = "txt_data";
             this.txt_data.Size = new System.Drawing.Size(371, 277);
             this.txt_data.TabIndex = 6;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(158, 146);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 22);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Senha:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(138, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 22);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Administrador:";
+            // 
+            // btn_autorizar
+            // 
+            this.btn_autorizar.BackgroundImage = global::fundBra.Properties.Resources.botao;
+            this.btn_autorizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_autorizar.FlatAppearance.BorderSize = 0;
+            this.btn_autorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_autorizar.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold);
+            this.btn_autorizar.Location = new System.Drawing.Point(140, 214);
+            this.btn_autorizar.Name = "btn_autorizar";
+            this.btn_autorizar.Size = new System.Drawing.Size(91, 35);
+            this.btn_autorizar.TabIndex = 31;
+            this.btn_autorizar.Text = "AUTORIZAR";
+            this.btn_autorizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_autorizar.UseVisualStyleBackColor = true;
+            this.btn_autorizar.Click += new System.EventHandler(this.btn_autorizar_Click);
+            // 
+            // txt_senha
+            // 
+            this.txt_senha.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_senha.Location = new System.Drawing.Point(105, 171);
+            this.txt_senha.Name = "txt_senha";
+            this.txt_senha.PasswordChar = '*';
+            this.txt_senha.Size = new System.Drawing.Size(160, 20);
+            this.txt_senha.TabIndex = 30;
+            // 
+            // txt_adm
+            // 
+            this.txt_adm.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_adm.Location = new System.Drawing.Point(106, 121);
+            this.txt_adm.Name = "txt_adm";
+            this.txt_adm.Size = new System.Drawing.Size(160, 20);
+            this.txt_adm.TabIndex = 29;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(79, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 27);
+            this.label1.TabIndex = 28;
+            this.label1.Text = "LOGIN DE ADMINISTRADOR";
             // 
             // label11
             // 
@@ -152,68 +215,6 @@ namespace fundBra
             this.btnSair.TabIndex = 14;
             this.btnSair.Text = "SAIR";
             this.btnSair.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Dubai", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(79, 69);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(214, 27);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "LOGIN DE ADMINISTRADOR";
-            // 
-            // txt_adm
-            // 
-            this.txt_adm.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_adm.Location = new System.Drawing.Point(106, 121);
-            this.txt_adm.Name = "txt_adm";
-            this.txt_adm.Size = new System.Drawing.Size(160, 20);
-            this.txt_adm.TabIndex = 29;
-            // 
-            // txt_senha
-            // 
-            this.txt_senha.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_senha.Location = new System.Drawing.Point(105, 171);
-            this.txt_senha.Name = "txt_senha";
-            this.txt_senha.Size = new System.Drawing.Size(160, 20);
-            this.txt_senha.TabIndex = 30;
-            // 
-            // btn_autorizar
-            // 
-            this.btn_autorizar.BackgroundImage = global::fundBra.Properties.Resources.botao;
-            this.btn_autorizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_autorizar.FlatAppearance.BorderSize = 0;
-            this.btn_autorizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_autorizar.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold);
-            this.btn_autorizar.Location = new System.Drawing.Point(140, 214);
-            this.btn_autorizar.Name = "btn_autorizar";
-            this.btn_autorizar.Size = new System.Drawing.Size(91, 35);
-            this.btn_autorizar.TabIndex = 31;
-            this.btn_autorizar.Text = "AUTORIZAR";
-            this.btn_autorizar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_autorizar.UseVisualStyleBackColor = true;
-            this.btn_autorizar.Click += new System.EventHandler(this.btn_autorizar_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(138, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 22);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Administrador:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Dubai", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(158, 146);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 22);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Senha:";
             // 
             // admin
             // 
