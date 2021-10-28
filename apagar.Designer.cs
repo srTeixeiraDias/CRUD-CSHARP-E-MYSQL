@@ -31,7 +31,6 @@ namespace fundBra
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.txt_data = new System.Windows.Forms.Panel();
-            this.txt_cpf = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.txt_celular = new System.Windows.Forms.MaskedTextBox();
@@ -57,6 +56,7 @@ namespace fundBra
             this.btn_atualizar = new System.Windows.Forms.Button();
             this.lbl_saida = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
+            this.txt_cpf = new System.Windows.Forms.MaskedTextBox();
             this.panel2.SuspendLayout();
             this.txt_data.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,15 +104,6 @@ namespace fundBra
             this.txt_data.Name = "txt_data";
             this.txt_data.Size = new System.Drawing.Size(582, 416);
             this.txt_data.TabIndex = 6;
-            // 
-            // txt_cpf
-            // 
-            this.txt_cpf.BackColor = System.Drawing.Color.YellowGreen;
-            this.txt_cpf.Enabled = false;
-            this.txt_cpf.Location = new System.Drawing.Point(398, 254);
-            this.txt_cpf.Name = "txt_cpf";
-            this.txt_cpf.Size = new System.Drawing.Size(143, 20);
-            this.txt_cpf.TabIndex = 40;
             // 
             // label1
             // 
@@ -374,6 +365,16 @@ namespace fundBra
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // txt_cpf
+            // 
+            this.txt_cpf.BackColor = System.Drawing.Color.YellowGreen;
+            this.txt_cpf.Enabled = false;
+            this.txt_cpf.Location = new System.Drawing.Point(427, 250);
+            this.txt_cpf.Mask = "000.000.000-00";
+            this.txt_cpf.Name = "txt_cpf";
+            this.txt_cpf.Size = new System.Drawing.Size(114, 20);
+            this.txt_cpf.TabIndex = 41;
+            // 
             // apagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,7 +409,6 @@ namespace fundBra
         private System.Windows.Forms.Label lbl_saida;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txt_cpf;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.MaskedTextBox txt_celular;
@@ -420,5 +420,6 @@ namespace fundBra
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.MaskedTextBox txt_cpf;
     }
 }

@@ -102,6 +102,7 @@ namespace fundBra
                         txt_nome.Clear();
                         txt_telefone.Clear();
                         txt_celular.Clear();
+                        txt_cpf.Clear();
                         txt_email.Clear();
                         maskedTextBox1.Clear();
                         txt_deletar.Clear();
